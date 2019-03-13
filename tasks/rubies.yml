@@ -45,6 +45,7 @@
 - name: Symlink ruby related binaries on the system path
   file:
     state: 'link'
+    force: True
     src: '{{ rvm1_install_path }}/wrappers/default/{{ item }}'
     dest: '{{ rvm1_symlink_to }}/{{ item }}'
     owner: '{{ root_user }}'
@@ -55,6 +56,7 @@
 - name: Symlink bundler binaries on the system path
   file:
     state: 'link'
+    force: True
     src: '{{ rvm1_install_path }}/wrappers/default/{{ item }}'
     dest: '{{ rvm1_symlink_to }}/{{ item }}'
     owner: '{{ root_user }}'
